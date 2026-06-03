@@ -144,20 +144,17 @@ Skill 支持 4 种工作模式，由用户指令自动触发：
 
 ### 前置要求
 
-- [Hermes Agent](https://github.com/nousresearch/hermes-agent) 已安装
+- 已安装一个agent
 - Python 3.11+
 - 一个 OpenAI-compatible LLM API（如 DeepSeek、OpenAI 等）
 
 ### 安装 Skill
 
 ```bash
-# 方式一：手动安装
-# 将 ai-agent-daily-mentor 目录放入 Hermes skills 目录
+# 将 ai-agent-daily-mentor 目录放入 你的agent skills 目录
+# 例如
 cp -r ai-agent-daily-mentor ~/.hermes/skills/
 
-# 方式二：通过 Hermes CLI
-hermes skills install ai-agent-daily-mentor
-```
 
 ### 开始学习
 
@@ -245,11 +242,6 @@ MIT
 欢迎提交 Issue 和 Pull Request！
 
 如果你有好的学习资源、面试经验或自适应规则建议，欢迎贡献。
-
-## 🔗 相关链接
-
-- [Hermes Agent](https://github.com/nousresearch/hermes-agent) — 本 Skill 的运行平台
-- [AI-Interview](https://github.com/Marcos-wu/ai-agent-daily-mentor) — 本项目仓库
 
 ---
 
