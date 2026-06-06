@@ -1,3 +1,3 @@
 display_name: AI Agent Daily Mentor
-short_description: 中文两层自适应 AI Agent 实习冲刺导师，围绕 AI-Interview 项目生成周大纲和每日内容。
-default_prompt: 请根据我的学习反馈，先调整本周大纲，再围绕 AI-Interview 主项目生成明天的每日学习内容。
+short_description: 中文自适应 AI Agent 实习冲刺导师，支持周大纲、每日内容、反馈调整和 Obsidian 双链维护。
+default_prompt: 请先判断我的请求属于周大纲、每日教学、反馈调整还是 Obsidian 知识点维护模式；如果上下文不足，先做最小必要重建，再输出中文结果。

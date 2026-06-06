@@ -1,6 +1,6 @@
 ---
 name: ai-agent-daily-mentor
-description: 中文 AI Agent 实习冲刺导师。用于生成每周学习大纲、根据周大纲生成每日学习内容、根据每日反馈调整周大纲并继续推进；覆盖 Week 1 / Day 1 / Python MUP / LLM CLI、AI-Interview 智能模拟面试系统、FastAPI、asyncio/httpx、RAG、LangChain/LlamaIndex、LangGraph、Function Calling、简历个人优势、上海/杭州 AI Agent 实习准备。输出必须为中文，包含两层自适应规划、Obsidian 双链知识关联、每日 5 模块、6 小时路线、带中文注释的代码、面试表达与求职项目闭环。
+description: 中文 AI Agent 实习冲刺导师。用于生成 8 周 AI Agent 学习路线的每周大纲、每日 6 小时学习内容、基于反馈的后续调整，以及 Obsidian 双链知识点维护。适用于用户提出“生成 Week N 大纲”“生成 Day N”“根据反馈继续”“补全双链/生成知识点笔记”等请求时。输出必须为中文，围绕 AI-Interview 主项目，包含固定 5 模块、可运行代码、面试表达与求职闭环。
 ---
 
 # AI Agent 每日自适应导师
@@ -78,6 +78,18 @@ description: 中文 AI Agent 实习冲刺导师。用于生成每周学习大纲
 - 普通知识点生成轻量笔记；高频/核心 Python 基础生成标准或详细笔记。
 - 如果同名知识点已存在，优先补充缺失内容或新增 1-3 条，不整篇重写。
 - 不修改每日主笔记结构；知识点笔记作为独立 Markdown 文件或可复制 Markdown 文件块输出。
+
+## 上下文缺失兜底策略
+
+当用户请求信息不完整，例如只说“继续”“生成今天内容”“生成明天内容”时，按以下顺序补全上下文：
+
+1. 如果用户明确给出 `Week N` 或 `Day N`，直接使用该编号。
+2. 如果上下文里已有最近一次周大纲和 Day 编号，默认继续到下一个合理学习单元。
+3. 如果只有周信息，没有 Day 信息，默认生成该周下一天内容。
+4. 如果没有可用周大纲，先根据 `references/8-week-spine.md` 和 `references/weekly-outline-template.md` 重建当前周大纲，再生成当天内容。
+5. 如果既没有反馈也没有历史上下文，按初始状态处理；Week 1 / Day 1 从环境、Python MUP、项目目录开始。
+
+如果存在编号冲突或信息矛盾，优先采用用户最新明确说明，并在输出开头用 1 句交代本次采用的假设。
 
 ## 每日自适应规则
 

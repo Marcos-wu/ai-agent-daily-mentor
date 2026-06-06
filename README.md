@@ -1,10 +1,10 @@
 # 🤖 AI Agent Daily Mentor
 
-中文 AI Agent 实习冲刺导师 — 一个基于 Hermes Agent 的自适应学习 Skill，帮助你在 8 周内从零基础冲刺 AI Agent 应用开发实习。
+中文 AI Agent 实习冲刺导师 — 一个面向通用 agent 工作流的自适应学习 skill，帮助你在 8 周内从零基础冲刺 AI Agent 应用开发实习。
 
 ## 📋 项目简介
 
-`ai-agent-daily-mentor` 是一个 **Hermes Agent Skill**，专为中文学习者设计。它扮演一位严谨的 Python 后端兼 AI Agent 导师，带你完成从 Python 基础到 AI Agent 项目落地的完整学习路线，最终产出一个可投递的求职项目。
+`ai-agent-daily-mentor` 是一个 **agent skill**，专为中文学习者设计。它不绑定某一个特定 agent，只要你的 agent 能读取 `SKILL.md` 和按需参考 `references/`，就可以接入这套工作流。它扮演一位严谨的 Python 后端兼 AI Agent 导师，带你完成从 Python 基础到 AI Agent 项目落地的完整学习路线，最终产出一个可投递的求职项目。
 
 ### 核心特点
 
@@ -144,17 +144,37 @@ Skill 支持 4 种工作模式，由用户指令自动触发：
 
 ### 前置要求
 
-- 已安装一个agent
+- 一个支持本地 skill、提示词目录或工作区资源读取的 agent 工具
 - Python 3.11+
 - 一个 OpenAI-compatible LLM API（如 DeepSeek、OpenAI 等）
+- agent 能读取 `SKILL.md`，并按需访问 `references/` 目录
 
-### 安装 Skill
+### 下载 Skill
 
 ```bash
-# 将 ai-agent-daily-mentor 目录放入 你的agent skills 目录
-# 例如
-cp -r ai-agent-daily-mentor ~/.hermes/skills/
+# 方式一：通过 Git 下载
+git clone https://github.com/Marcos-wu/ai-agent-daily-mentor.git
 
+# 方式二：通过仓库页面下载 ZIP 后解压
+# 解压后保持目录名为 ai-agent-daily-mentor
+```
+
+### 接入 Agent
+
+你可以按自己的 agent 使用方式二选一：
+
+1. 如果 agent 支持专门的 `skills/`、`prompts/` 或 `resources/` 目录，把 `ai-agent-daily-mentor/` 整个文件夹放进去。
+2. 如果 agent 直接读取当前工作区，就把该目录保留在项目里，并在对话中显式提到 `ai-agent-daily-mentor` 或让 agent 读取其中的 `SKILL.md`。
+
+接入时至少要保留以下结构：
+
+```text
+ai-agent-daily-mentor/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+```
 
 ### 开始学习
 
@@ -243,6 +263,9 @@ MIT
 
 如果你有好的学习资源、面试经验或自适应规则建议，欢迎贡献。
 
+## 🔗 相关链接
+
+- [ai-agent-daily-mentor](https://github.com/Marcos-wu/ai-agent-daily-mentor) — 本项目仓库
 ---
 
 > 💪 从零基础到 AI Agent 实习，8 周足够了。关键是每天 6 小时，持续输出，不堆 Demo，只做可投递的项目。
