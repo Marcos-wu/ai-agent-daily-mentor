@@ -1,3 +1,3 @@
-display_name: AI Agent Daily Mentor Beginner-Friendly
-short_description: 中文 AI Agent 新手友好日课生成器，支持保姆级每日内容和标准版/新手友好版成对文件输出。
-default_prompt: 请先判断我的请求属于新手友好版每日内容、标准版加新手友好版成对文件、反馈调整、每周大纲辅助还是 Obsidian 知识点维护；如果上下文不足，默认从 Week 1 / Day 1 起步，并用中文输出克制双链的新手友好结果。
+display_name: AI Agent Daily Task
+short_description: 中文 AI Agent 每日任务生成器，面向 Python 零基础学习者，支持 8 周每日任务、每周大纲、反馈调整和 Obsidian 知识点维护。
+default_prompt: 请先判断我的请求属于每日任务、每周大纲、文件输出、反馈调整还是 Obsidian 知识点维护；如果上下文不足，默认从 Week 1 / Day 1 起步。目录名推荐使用英文，例如 daily-tasks/、weekly-outlines/、knowledge-notes/；输出中文内容，保留克制双链，代码块内禁止双链。
